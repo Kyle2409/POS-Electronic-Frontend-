@@ -9,17 +9,20 @@
     <MDBCollapse id="navbarCenterAlignExample" v-model="collapse6">
       <MDBNavbarNav center class="mb-2 mb-lg-0">
         <!-- Center links -->
-        <MDBNavbarItem to="#" active>
+        <MDBNavbarItem router-link to="/">
           Home
         </MDBNavbarItem>
-        <MDBNavbarItem to="#" active>
+        <MDBNavbarItem router-link :to="{name:'Login'}">
           Login
         </MDBNavbarItem>
-        <MDBNavbarItem to="#" active>
+        <MDBNavbarItem router-link :to="{name:'Register'}">
           Register
         </MDBNavbarItem>
-        <MDBNavbarItem to="#" active>
+        <MDBNavbarItem router-link :to="{name:'Product'}">
           Products
+        </MDBNavbarItem>
+        <MDBNavbarItem router-link :to="{name:'Cart'}">
+          Cart
         </MDBNavbarItem>
         
         <!-- Navbar dropdown -->
