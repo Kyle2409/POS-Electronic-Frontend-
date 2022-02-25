@@ -1,14 +1,11 @@
 <template>
- 
+  
 </template>
 
 <script>
-
 export default {
- name:'Product',
-    components: {
-        
-    }
+    name: 'Cart'
+
 }
 </script>
 
