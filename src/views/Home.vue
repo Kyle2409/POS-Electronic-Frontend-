@@ -1,12 +1,11 @@
 <template>
-<div id="Home">
 <div class="container">
-  <h1>Welcome to the Electronic Department Store
-    </h1> 
-     <MDBBtn color="primary">sign up</MDBBtn>
-      <MDBBtn color="primary">log in</MDBBtn>
+  <h1>Welcome to the Electronic Department Store</h1> 
+  <div class="button">
+     <MDBBtn color="danger"><router-link :to="{name:'Login'}">Login</router-link></MDBBtn>
+      <MDBBtn color="danger"><router-link :to="{name:'Register'}">Register</router-link></MDBBtn>
+      </div>
     </div>
-</div>
 </template>
 
 
@@ -15,12 +14,13 @@ import { MDBBtn } from "mdb-vue-ui-kit";
 export default {
   name: 'Home',
   components: {
-        MDBBtn
-
-  }
+      MDBBtn
+  },
 }
 </script>
 
 <style >
-
+.button{
+  padding: 50px;
+}
 </style>

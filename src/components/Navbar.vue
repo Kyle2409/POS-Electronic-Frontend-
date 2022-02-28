@@ -12,12 +12,12 @@
         <MDBNavbarItem router-link to="/">
           Home
         </MDBNavbarItem>
-        <MDBNavbarItem router-link :to="{name:'Login'}">
+        <!-- <MDBNavbarItem router-link :to="{name:'Login'}">
           Login
-        </MDBNavbarItem>
-        <MDBNavbarItem router-link :to="{name:'Register'}">
+        </MDBNavbarItem> -->
+        <!-- <MDBNavbarItem router-link :to="{name:'Register'}">
           Register
-        </MDBNavbarItem>
+        </MDBNavbarItem> -->
         <MDBNavbarItem router-link :to="{name:'Product'}">
           Products
         </MDBNavbarItem>

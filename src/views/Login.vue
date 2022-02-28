@@ -1,6 +1,7 @@
 <template>
-   <div class="col-md-12">
-    <div class="card card-container">
+   <div class="column">
+     <h1>WELCOME BACK PLEASE LOG IN  </h1>
+    <!-- <div class="card "> -->
       <img
         id="profile-img"
         src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"
@@ -8,12 +9,12 @@
       />
       <Form @submit="handleLogin" :validation-schema="schema">
         <div class="form-group">
-          <label for="username">Username</label>
-          <input name="username" type="text" v-model="username" placeholder="Username"/>
-          <ErrorMessage name="username" class="error-feedback" />
+          <label for="user_fullname"></label>
+          <input name="user_fullname" type="text" v-model="user_fullname" placeholder="Username"/>
+          <ErrorMessage name="user_fullname" class="error-feedback" />
         </div>
         <div class="form-group">
-          <label for="password">Password</label>
+          <label for="password"></label>
           <input name="password" type="password" v-model="password" placeholder="Password"/>
           <ErrorMessage name="password" class="error-feedback" />
         </div>
@@ -32,7 +33,7 @@
           </div>
         </div>
       </Form>
-    </div>
+    <!-- </div> -->
   </div>
 </template>
 
@@ -48,34 +49,21 @@ export default {
 }
 </script>
 
-<style>
-label{
-  display: block;
-  margin-top:10px;
-}
-.card-container{
-  max-width:350px !important ;
-  padding: 40px 40px;
-}
-.card{
-  background-color: #f7f7f7;
-  padding:20px 25px 30px;
-  margin:0 auto 25px;
-  margin-top:50px;
-  -moz-border-radius:2px;
-  -webkit-border-radius:2px;
-  border-radius:2px;
-  -moz-box-shadow: 0px 2px 2px rgba(0,0,0,0.3);
-  -webkit-box-shadow: 0px 2px 2px rgba(0,0,0,0.3);
-  box-shadow: 0px 2px 2px rgba(0,0,0,0.3);
-
+<style scoped>
+.form-group{
+  padding:20px
 }
 .profile-img-card{
   width: 96px;
   height: 96px;
-  margin: 0 auto 10px;display: block;
+  margin: 0 auto 10px;
+  display: block;
   -moz-border-radius:50%;
   -webkit-border-radius:50%;
   border-radius:50%;
 }
+/* .column{
+  height: 250vh;
+
+} */
 </style>

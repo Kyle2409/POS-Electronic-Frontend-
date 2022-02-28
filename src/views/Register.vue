@@ -1,44 +1,30 @@
 <template>
-<div id="app">
-  <div class="col-md-12">
-  <div class="card card-card-container">
+<h1>WELCOME TO ELECTRONIC DEPARTMENT STORE</h1>
+  <div class="column">
    <img
         id="profile-img"
         src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"
         class="profile-img-card"
       />
     <form @submit.prevent="login">
-      <div>
-        <label for="user_fullname">user_fullname</label>
+      <div class="form-group">
+        <label for="user_fullname"></label>
         <input name="username" v-model="username" placeholder="enter your username">
       </div>
-      <div>
-        <label for="email">email Address</label>
+      <div class="form-group">
+        <label for="email"></label>
         <input name="email" v-model="email" placeholder="enter your email address" type="email">
       </div>
-      <div>
-        <label for="phone_number">phone_number</label>
+      <div class="form-group">
+        <label for="phone_number"></label>
         <input name="phone_number" v-model="phone_number" placeholder="enter your phone number" type="number">
       </div>
       
-      <div>
-        <label for="password">password</label>
+      <div class="form-group">
+        <label for="password"></label>
         <input name="password" v-model="password" placeholder="enter your password" type="password">
       </div>
-      <!-- <div>
-        <label for="firstName">first name</label>
-        <input name="firstName" v-model="firstName" placeholder="first name">
-      </div>
-      <div>
-        <label for="lastName">last name</label>
-        <input name="lastName" v-model="lastName" placeholder="last name">
-      </div>
-      <div>
-        <label for="age">age</label>
-        <input name="age" v-model="age" placeholder="age" type="number">
-      </div> -->
-      
-     <button class="btn btn-primary btn-" :disabled="loading">
+    <button class="btn btn-primary btn-" :disabled="loading">
             <span
               v-show="loading"
               class="spinner-border spinner-border-sm"
@@ -47,45 +33,52 @@
           </button>
     </form>
     </div>
-    </div>
-  </div>
+
 </template>
 
 <script>
+import User from '../models/user';
 export default {
-  name: "Register",
+  name: 'Register',
   data() {
     return {
-      username: "",
-      password: "",
-      firstName: "",
-      lastName: "",
-      age: "",
-      address: ""
+      user: new User('', '', ''),
+      submitted: false,
+      successful: false,
+      message: ''
     };
   },
+  computed: {
+    loggedIn() {
+      // return this.$store.state.auth.status.loggedIn;
+    }
+  },
+  mounted() {
+    if (this.loggedIn) {
+      this.$router.push('/profile');
+    }
+  },
   methods: {
-    async login() {
-      const { username, password, firstName, lastName, age, address } = this;
-      const res = await fetch(
-        "https://SomberHandsomePhysics--five-nine.repl.co/register",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json"
-          },
-          body: JSON.stringify({
-            username,
-            password,
-            firstName,
-            lastName,
-            age,
-            address
-          })
+    handleRegister() {
+      this.message = '';
+      this.submitted = true;
+      this.$validator.validate().then(isValid => {
+        if (isValid) {
+          this.$store.dispatch('auth/register', this.user).then(
+            data => {
+              this.message = data.message;
+              this.successful = true;
+            },
+            error => {
+              this.message =
+                (error.response && error.response.data) ||
+                error.message ||
+                error.toString();
+              this.successful = false;
+            }
+          );
         }
-      );
-      const data = await res.json();
-      console.log(data);
+      });
     }
   }
 };
@@ -93,33 +86,20 @@ export default {
 
 
 <style>
-label{
-  display: block;
-  margin-top:10px;
-}
-.card-container{
-  max-width:350px !important ;
-  padding: 40px 40px;
-}
-.card{
-  background-color: #f7f7f7;
-  padding:20px 25px 30px;
-  margin:0 auto 25px;
-  margin-top:50px;
-  -moz-border-radius:2px;
-  -webkit-border-radius:2px;
-  border-radius:2px;
-  -moz-box-shadow: 0px 2px 2px rgba(0,0,0,0.3);
-  -webkit-box-shadow: 0px 2px 2px rgba(0,0,0,0.3);
-  box-shadow: 0px 2px 2px rgba(0,0,0,0.3);
-
+.form-group{
+  padding:20px
 }
 .profile-img-card{
   width: 96px;
   height: 96px;
-  margin: 0 auto 10px;display: block;
+  margin: 0 auto 10px;
+  display: block;
   -moz-border-radius:50%;
   -webkit-border-radius:50%;
   border-radius:50%;
 }
+/* .column{
+  height: 250vh;
+
+} */
 </style>
