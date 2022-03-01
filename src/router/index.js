@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Home from '@/views/Home.vue'
+import Profile from '@/views/Profile.vue'
 import Login from '@/views/Login.vue'
 import Register from '@/views/Register.vue'
 import Product from '@/views/Product.vue'
@@ -10,6 +11,11 @@ const routes = [
     path: '/',
     name: 'Home',
     component: Home
+  },
+  {
+    path: '/profile',
+    name: 'Profile',
+    component: Profile
   },
   {
     path: '/login',
@@ -39,7 +45,7 @@ const router = createRouter({
   routes
 })
 router.beforeEach((to, from, next) => {
-  const publicPages = ['/', '/login', '/register','/product','/cart'];
+  const publicPages = ['/','/profile', '/login', '/register','/product','/cart'];
   const authRequired = !publicPages.includes(to.path);
   const loggedIn = localStorage.getItem('user');
   // trying to access a restricted page + not logged in

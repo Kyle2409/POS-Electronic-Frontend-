@@ -24,18 +24,11 @@ export default {
   text-align: center;
   /* color: #2c3e50; */
   /* background-color: #C2FCFF; */
-  /* height: 100vh; */
+  height: auto;
    background:linear-gradient(135deg, #172a74, #21a9af);
   background-color:#184e8e;
   /* padding-bottom:80px; */
   font-family:'Source Sans Pro', sans-serif;
-}
-
-.footer{
-    padding-bottom: 0;
-    position: absolute;
-    bottom:0;
-    width: 100%;
 }
 #nav a {
   font-weight: bold;

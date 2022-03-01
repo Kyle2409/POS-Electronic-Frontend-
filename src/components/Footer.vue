@@ -11,7 +11,7 @@
       style="background-color: rgba(0, 0, 0, 0.2)"
     >
       © 2020 Copyright:
-      <p class="text-white" 
+      <p class="text-white m-1" 
         >Electronic Department Store</p> 
     </div>
   </MDBFooter>
@@ -28,5 +28,10 @@
   };
 </script>
 <style>
-
+.footer{
+    padding-bottom: 0;
+    /* position: absolute; */
+    bottom:0;
+    width: 100%;
+}
 </style>

@@ -1,14 +1,17 @@
 <template>
-<div class="container mt-100">
+<div class=" mt-100">
     <div class="row">
-        <div class="col-md-4 col-sm-6">
+        <div class="col-md-8 col-sm-12"  v-for="product in products" :key="product.id" >
             <div class="card mb-30" v-if="products">
-                    <div v-for="product of products" :key="product.id" class="inner">
-                        <div class="main-img"><img :src="product.img" alt="Category"></div>
+                    <div class="inner">
+                        <div class="main-img">
+                            <img :src="product.img" class="card-img img-fluid" width="96" height="350" alt="">
+                            </div>
                     </div>
                 <div class="card-body text-center">
-                    <h4 class="card-title">{{product.name}}</h4>
-                    <p class="text-muted">{{product.price}}</p><a class="btn btn-outline-primary btn-sm" href="/cart" data-abc="true">Add To Cart</a>
+                    <h4 class="card-title">{{product.title}}</h4>
+                    <h6 class="card-title">{{product.description}}</h6>
+                    <p class="text">{{product.price}}</p><a class="btn btn-outline-primary btn-sm" href="/cart" data-abc="true">Add To Cart</a>
                 </div>
             </div>
         </div>

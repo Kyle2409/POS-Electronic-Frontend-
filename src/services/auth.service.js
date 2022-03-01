@@ -1,5 +1,5 @@
 import axios from 'axios';
-const API_URL = 'https://electronic-department-backend.herokuapp.com/users';
+const API_URL = 'https://eds-backend.herokuapp.com/users';
 class AuthService {
   login(user) {
     return axios
