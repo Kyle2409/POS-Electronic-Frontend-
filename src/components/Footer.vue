@@ -7,12 +7,12 @@
 
   >
     <div
-      class="text-center p-3"
+      class="text-center p-1"
       style="background-color: rgba(0, 0, 0, 0.2)"
     >
       © 2020 Copyright:
-      <a class="text-white" 
-        >Electronic Department Store</a> 
+      <p class="text-white" 
+        >Electronic Department Store</p> 
     </div>
   </MDBFooter>
 </template>

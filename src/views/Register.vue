@@ -1,7 +1,9 @@
 <template>
-<h1>WELCOME TO ELECTRONIC DEPARTMENT STORE</h1>
+<div class="containers">
   <div class="column">
-   <img
+    <h1>WELCOME TO ELECTRONIC DEPARTMENT STORE</h1>
+  <div id="register">
+    <img
         id="profile-img"
         src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"
         class="profile-img-card"
@@ -9,20 +11,20 @@
     <form @submit.prevent="login">
       <div class="form-group">
         <label for="user_fullname"></label>
-        <input name="username" v-model="username" placeholder="enter your username">
+        <input name="username" v-model="username" placeholder="username">
       </div>
       <div class="form-group">
         <label for="email"></label>
-        <input name="email" v-model="email" placeholder="enter your email address" type="email">
+        <input name="email" v-model="email" placeholder="email address" type="email">
       </div>
       <div class="form-group">
         <label for="phone_number"></label>
-        <input name="phone_number" v-model="phone_number" placeholder="enter your phone number" type="number">
+        <input name="phone_number" v-model="phone_number" placeholder="phone number" type="number">
       </div>
       
       <div class="form-group">
         <label for="password"></label>
-        <input name="password" v-model="password" placeholder="enter your password" type="password">
+        <input name="password" v-model="password" placeholder="password" type="password">
       </div>
     <button class="btn btn-primary btn-" :disabled="loading">
             <span
@@ -31,9 +33,12 @@
             ></span>
             <span>Register</span>
           </button>
+          <br>
+            <p style="color: black;" class="login">Already a member? <a href="/login">Login to your account</a></p>
     </form>
     </div>
-
+    </div>
+</div>
 </template>
 
 <script>
@@ -86,20 +91,29 @@ export default {
 
 
 <style>
-.form-group{
-  padding:20px
+#register{
+  border: 5px solid black;
+  width: 35%;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 20px;
 }
-.profile-img-card{
-  width: 96px;
-  height: 96px;
-  margin: 0 auto 10px;
-  display: block;
-  -moz-border-radius:50%;
-  -webkit-border-radius:50%;
-  border-radius:50%;
+#register input {
+  margin: 20px;
+  border: none;
+  border-bottom: 2px solid black;
+  background-color:transparent
 }
-/* .column{
-  height: 250vh;
-
-} */
+.login a{
+  color: red;
+  transition: 0.3s;
+}
+.login a:hover {
+  color: rgb(73, 73, 73);
+  transition: 0.3s;
+}
+::placeholder{
+  color: black;
+  font-size: 20px;
+}
 </style>

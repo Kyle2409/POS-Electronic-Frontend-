@@ -4,13 +4,20 @@
             <div class="container hero">
                 <div class="row">
                     <div class="col-12 col-lg-6 col-xl-5 offset-xl-1">
-                        <h1>The revolution is here.</h1>
-                        <p>Mauris egestas tellus non ex condimentum, ac ullamcorper sapien dictum. Nam consequat neque quis sapien viverra convallis. In non tempus lorem. </p>
-                        <button class="btn btn-light btn-lg action-button" type="button">Learn More</button></div>
+                        <h1>Hey There! Welcome To Electronic Department Store</h1>
+                        <p>At the department store we buy quality products 
+                            and we sell them at affordable prices that is a promise we make to you.
+                        </p>
+                        <a href="/login">
+                        <button class="btn btn-light btn-lg action-button" type="button">Login</button>
+                        </a>
+                        </div>
                     <div
                         class="col-md-5 col-lg-5 offset-lg-1 offset-xl-0 d-none d-lg-block phone-holder">
-                        <div class="iphone-mockup"><img src="https://i.postimg.cc/3NSXt6Bs/iphone.png" class="device">
-                            <div class="screen"></div>
+                        <div class="iphone-mockup"><img src="https://i.postimg.cc/gJ3vDkSQ/iphone-removebg-preview.png" class="device">
+                            <div class="screen">
+                              <img src="https://i.postimg.cc/0jxHG4fG/rsz-2screenshot-from-2022-02-28-14-53-23-min-removebg-preview.png">
+                            </div>
                         </div>
                 </div>
             </div>
@@ -35,11 +42,11 @@ export default {
  
 } */
 
-@media (min-width:768px) {
+/* @media (min-width:768px) {
   .header-blue {
     padding-bottom:120px;
   }
-}
+} */
 .header-blue .action-button, .header-blue .action-button:not(.disabled):active {
   border:1px solid rgba(255,255,255,0.7);
   border-radius:40px;
@@ -128,7 +135,10 @@ export default {
   width:100%;
   height:auto;
 }
-
+.screen img{
+  align-items:center;
+  padding-top:137px;
+}
 .header-blue .iphone-mockup .screen {
   position:absolute;
   width:88%;
@@ -137,7 +147,7 @@ export default {
   border-radius:2px;
   left:6%;
   border:1px solid #444;
-  background-color:#aaa;
+  background-color:#fff;
   overflow:hidden;
   /* background:url(https://i.postimg.cc/3NSXt6Bs/iphone.png); */
   background-size:cover;
