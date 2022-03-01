@@ -22,9 +22,13 @@ export default {
   /* -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; */
   text-align: center;
-  color: #2c3e50;
-  background-color: #C2FCFF;
-  height: 100vh;
+  /* color: #2c3e50; */
+  /* background-color: #C2FCFF; */
+  /* height: 100vh; */
+   background:linear-gradient(135deg, #172a74, #21a9af);
+  background-color:#184e8e;
+  padding-bottom:80px;
+  font-family:'Source Sans Pro', sans-serif;
 }
 
 .footer{
