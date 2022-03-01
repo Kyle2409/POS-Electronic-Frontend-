@@ -77,7 +77,7 @@ export default {
   transition: 0.3s;
 }
 ::placeholder{
-  color: black;
+  color: #fff;
   font-size: 20px;
 }
 .profile-img-card{

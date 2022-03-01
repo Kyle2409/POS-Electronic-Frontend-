@@ -1,7 +1,7 @@
 <template>
 <div class="containers">
   <div class="column">
-    <h1>WELCOME TO ELECTRONIC DEPARTMENT STORE</h1>
+    <h1 class="text-light">WELCOME TO ELECTRONIC DEPARTMENT STORE</h1>
   <div id="register">
     <img
         id="profile-img"
@@ -113,7 +113,7 @@ export default {
   transition: 0.3s;
 }
 ::placeholder{
-  color: black;
+  color:#fff;
   font-size: 20px;
 }
 </style>
