@@ -15,18 +15,19 @@
         <MDBNavbarItem router-link :to="{name:'Register'}">
           Register
         </MDBNavbarItem>
-        <MDBNavbarItem router-link :to="{name:'Profile'}">
+        <MDBNavbarItem router-link v-if="currentUser" :to="{name:'Profile'}">
           Profile
         </MDBNavbarItem> 
-        <MDBNavbarItem router-link :to="{name:'Product'}">
+        <MDBNavbarItem router-link v-if="currentUser" :to="{name:'Product'}">
           Products
         </MDBNavbarItem>
-         <MDBNavbarItem router-link :to="{name:'Create'}">
+         <MDBNavbarItem router-link v-if="currentUser" :to="{name:'Create'}">
           Create a product
         </MDBNavbarItem>
-        <MDBNavbarItem router-link :to="{name:'Cart'}">
+        <MDBNavbarItem router-link v-if="currentUser" :to="{name:'Cart'}">
           Cart
         </MDBNavbarItem>
+        <button class="btn" v-if="currentUser" @click="logOut">Logout</button>
       </MDBNavbarNav>
     </MDBCollapse>
   </MDBNavbar>
@@ -66,7 +67,22 @@
         collapse6,
         dropdown9
       }
+    },
+    methods:{
+        toggleNav() {
+            this.isActive = !this.isActive;
+        },
+        logOut() {
+      this.$store.dispatch('auth/logout');
+      this.$router.push('/login');
     }
+    },
+    computed: {
+    currentUser() {
+      return this.$store.state.auth.user;
+    },
+   
+  }
   };
 </script>
 

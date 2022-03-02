@@ -11,7 +11,7 @@
                 <div class="card-body text-center">
                     <h4 class="card-title">{{product.title}}</h4>
                     <h6 class="card-title">{{product.description}}</h6>
-                    <p class="text">{{product.price}}</p><a class="btn btn-outline-primary btn-sm" data-bs-target="addtocart{i}" data-abc="true">Add To Cart</a>
+                    <h3 class="text">R{{product.price}}</h3><a class="btn btn-outline-primary btn-sm" data-bs-target="addtocart{i}" data-abc="true">Add To Cart</a>
                     <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#update-modal${i}" >update</button>
     <button class="btn btn-danger" onclick="deleteProducts(${i})" >delete</button>
                 </div>
