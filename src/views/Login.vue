@@ -10,13 +10,15 @@
       />
       <Form @submit="handleLogin" :validation-schema="schema">
         <div class="form-group">
-          <label for="user_fullname"></label>
-          <Field name="user_fullname" type="text" v-model="user_fullname" placeholder="Username"/>
+          <label for="fullname"></label>
+          <Field name="fullname" type="text" class="form-control"
+           placeholder="Username"/>
           <ErrorMessage name="user_fullname" class="error-feedback" />
         </div>
         <div class="form-group">
           <label for="password"></label>
-          <Field name="password" type="password" v-model="password" placeholder="Password"/>
+          <Field name="password" type="password" class="form-control"
+           placeholder="Password"/>
           <ErrorMessage name="password" class="error-feedback" />
         </div>
         <div class="form-group">

@@ -1,33 +1,34 @@
 <template>
-   <MDBNavbar expand="lg" light bg="light" container>
-    <!-- Toggle button -->
+  <MDBNavbar expand="lg" light bg="light" container>
     <MDBNavbarToggler
       target="#navbarCenterAlignExample"
       @click="collapse6 = !collapse6"
     ></MDBNavbarToggler>
-    <!-- Collapsible wrapper -->
     <MDBCollapse id="navbarCenterAlignExample" v-model="collapse6">
       <MDBNavbarNav center class="mb-2 mb-lg-0">
-        <!-- Center links -->
         <MDBNavbarItem router-link to="/">
           Home
         </MDBNavbarItem>
-         <MDBNavbarItem router-link :to="{name:'Profile'}">
+        <MDBNavbarItem router-link :to="{name:'Login'}">
+          Login
+        </MDBNavbarItem>
+        <MDBNavbarItem router-link :to="{name:'Register'}">
+          Register
+        </MDBNavbarItem>
+        <MDBNavbarItem router-link :to="{name:'Profile'}">
           Profile
-         </MDBNavbarItem> 
+        </MDBNavbarItem> 
         <MDBNavbarItem router-link :to="{name:'Product'}">
           Products
+        </MDBNavbarItem>
+         <MDBNavbarItem router-link :to="{name:'Create'}">
+          Create a product
         </MDBNavbarItem>
         <MDBNavbarItem router-link :to="{name:'Cart'}">
           Cart
         </MDBNavbarItem>
-        
-        <!-- Navbar dropdown -->
-       
-        <!-- Center links -->
       </MDBNavbarNav>
     </MDBCollapse>
-    <!-- Collapsible wrapper -->
   </MDBNavbar>
 </template>
 

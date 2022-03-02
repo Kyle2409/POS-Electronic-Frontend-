@@ -1,10 +1,10 @@
 import axios from 'axios';
-const API_URL = 'https://eds-backend.herokuapp.com/users';
+const API_URL = 'https://eds-backend.herokuapp.com/users/';
 class AuthService {
   login(user) {
     return axios
       .post(API_URL + 'signin', {
-        user_fullname: user.user_fullname,
+        fullname: user.fullname,
         password: user.password
       })
       .then(response => {
@@ -18,12 +18,15 @@ class AuthService {
     localStorage.removeItem('user');
   }
   register(user) {
+    console.log(user)
+    console.log(API_URL + 'signup')
     return axios.post(API_URL + 'signup', {
-      user_fullname: user.user_fullname,
+      fullname: user.fullname,
       email: user.email,
       phone_number: user.phone_number,
       password: user.password
     });
+
   }
 }
 export default new AuthService();

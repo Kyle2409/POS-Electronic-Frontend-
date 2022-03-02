@@ -8,26 +8,30 @@
         src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"
         class="profile-img-card"
       />
-    <Form @submit.prevent="login">
+    <Form @submit="handleRegister" >
+      <div v-if="!successful">
       <div class="form-group">
-        <label for="user_fullname"></label>
-        <Field name="username" v-model="username" placeholder="username"/>
+        <label for="fullname"></label>
+        <Field name="fullname" placeholder="fullname" class="form-control"/>
           <ErrorMessage name="username" class="error-feedback" />
       </div>
       <div class="form-group">
         <label for="email"></label>
-        <Field name="email" v-model="email" placeholder="email address" type="email"/>
+        <Field name="email"  placeholder="email address" class="form-control"
+        type="email"/>
           <ErrorMessage name="email" class="error-feedback" />
       </div>
       <div class="form-group">
         <label for="phone_number"></label>
-        <Field name="phone_number" v-model="phone_number" placeholder="phone number" type="number"/>
+        <Field name="phone_number"  class="form-control"
+        placeholder="phone number" type="number"/>
           <ErrorMessage name="phone_number" class="error-feedback" />
       </div>
       
       <div class="form-group">
         <label for="password"></label>
-        <Field name="password" v-model="password" placeholder="password" type="password"/>
+        <Field name="password"  class="form-control"
+        placeholder="password" type="password"/>
           <ErrorMessage name="password" class="error-feedback" />
       </div>
     <button class="btn btn-primary btn-" :disabled="loading">
@@ -39,7 +43,15 @@
           </button>
           <br>
             <p style="color: black;" class="login">Already a member? <a href="/login">Login to your account</a></p>
+            </div>
     </Form>
+     <div
+        v-if="message"
+        class="alert"
+        :class="successful ? 'alert-success' : 'alert-danger'"
+      >
+        {{ message }}
+      </div>
     </div>
     </div>
 </div>
@@ -59,7 +71,7 @@ export default {
     const schema = yup.object().shape({
       fullname: yup
         .string()
-        .required("Username is required!")
+        .required("fullname is required!")
         .min(3, "Must be at least 3 characters!")
         .max(20, "Must be maximum 20 characters!"),
       email: yup
@@ -97,16 +109,19 @@ export default {
   },
   methods: {
     handleRegister(user) {
+      console.log("we made it")
       this.message = "";
       this.successful = false;
       this.loading = true;
       this.$store.dispatch("auth/register", user).then(
         (data) => {
+          console.log(data)
           this.message = data.message;
           this.successful = true;
           this.loading = false;
         },
         (error) => {
+          console.log(error.message)
           this.message =
             (error.response &&
               error.response.data &&
