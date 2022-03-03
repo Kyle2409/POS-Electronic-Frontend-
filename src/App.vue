@@ -27,7 +27,7 @@ export default {
 }
 @media (min-width:400px) {
   #app{
-    height:130vh;
+    height:100vh;
   }
 }
 #nav a {
