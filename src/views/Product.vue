@@ -1,4 +1,5 @@
 <template>
+<addProductModal/>
 <div class=" mt-100">
     <div class="row">
         <div class="col-md-8 col-sm-12"  v-for="product in products" :key="product.id" >
@@ -11,9 +12,10 @@
                 <div class="card-body text-center">
                     <h4 class="card-title">{{product.title}}</h4>
                     <h6 class="card-title">{{product.description}}</h6>
-                    <h3 class="text">R{{product.price}}</h3><a class="btn btn-outline-primary btn-sm" data-bs-target="addtocart{i}" data-abc="true">Add To Cart</a>
-                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#update-modal${i}" >update</button>
-    <button class="btn btn-danger" onclick="deleteProducts(${i})" >delete</button>
+                    <h3 class="text">R{{product.price}}</h3>
+                    <a class="btn btn-outline-primary btn-sm">Add To Cart</a>
+                    <button class="btn btn-primary">update</button>
+                    <button class="btn btn-danger" @click="deleteProduct(product.id)" >delete</button>
                 </div>
 
             </div>
@@ -23,8 +25,14 @@
 </template>
 
 <script>
-
+import addProductModal from "@/components/addProductModal.vue";
+import editProductModal from "@/components/editProductModal.vue";
 export default {
+    name: "Products",
+  components: {
+    addProductModal,
+    editProductModal,
+  },
  data() {
      return{
         products: null

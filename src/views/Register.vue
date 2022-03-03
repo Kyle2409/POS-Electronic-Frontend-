@@ -160,7 +160,7 @@ export default {
   color: rgb(73, 73, 73);
   transition: 0.3s;
 }
-::placeholder{
+.form-control{
   color:#fff;
   font-size: 20px;
 }

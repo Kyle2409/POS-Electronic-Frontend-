@@ -21,9 +21,6 @@
         <MDBNavbarItem router-link v-if="currentUser" :to="{name:'Product'}">
           Products
         </MDBNavbarItem>
-         <MDBNavbarItem router-link v-if="currentUser" :to="{name:'Create'}">
-          Create a product
-        </MDBNavbarItem>
         <MDBNavbarItem router-link v-if="currentUser" :to="{name:'Cart'}">
           Cart
         </MDBNavbarItem>

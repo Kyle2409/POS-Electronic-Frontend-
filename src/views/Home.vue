@@ -3,6 +3,13 @@
         <div class="header-blue">
             <div class="container hero">
                 <div class="row">
+                  <div class="col-md-5 col-lg-5 offset-lg-1 offset-xl-0 d-lg-block phone-holder">
+                        <div class="iphone-mockup"><img src="https://i.postimg.cc/gJ3vDkSQ/iphone-removebg-preview.png" class="device">
+                            <div class="screen">
+                              <img src="https://i.postimg.cc/0jxHG4fG/rsz-2screenshot-from-2022-02-28-14-53-23-min-removebg-preview.png">
+                            </div>
+                        </div>
+                </div>
                     <div class="col-12 col-lg-6 col-xl-5 offset-xl-1">
                         <h1>Hey There! Welcome To Electronic Department Store</h1>
                         <p>At the department store we buy quality products 
@@ -12,14 +19,6 @@
                         <button class="btn btn-light btn-lg action-button" type="button">Login</button>
                         </a>
                         </div>
-                    <div
-                        class="col-md-5 col-lg-5 offset-lg-1 offset-xl-0 d-none d-lg-block phone-holder">
-                        <div class="iphone-mockup"><img src="https://i.postimg.cc/gJ3vDkSQ/iphone-removebg-preview.png" class="device">
-                            <div class="screen">
-                              <img src="https://i.postimg.cc/0jxHG4fG/rsz-2screenshot-from-2022-02-28-14-53-23-min-removebg-preview.png">
-                            </div>
-                        </div>
-                </div>
             </div>
         </div>
         </div>
@@ -38,15 +37,12 @@ export default {
 </script>
 
 <style >
-/* .header-blue {
- 
-} */
 
-/* @media (min-width:768px) {
-  .header-blue {
-    padding-bottom:120px;
+@media (min-width:768px) {
+  .col-12{
+        height:100;
   }
-} */
+}
 .header-blue .action-button, .header-blue .action-button:not(.disabled):active {
   border:1px solid rgba(255,255,255,0.7);
   border-radius:40px;
@@ -104,7 +100,11 @@ export default {
   font-weight:300;
   line-height:1.4;
 }
-
+@media (min-width:992px) {
+  .device{
+  position:top;
+  }
+}
 @media (min-width:992px) {
   .header-blue .hero h1 {
     margin-top:190px;
@@ -112,18 +112,15 @@ export default {
     line-height:1.2;
   }
 }
-
 .header-blue .hero p {
   color:rgba(255,255,255,0.8);
   font-size:20px;
   margin-bottom:30px;
   font-weight:300;
 }
-
 .header-blue .phone-holder {
   text-align:right;
 }
-
 .header-blue div.iphone-mockup {
   position:relative;
   max-width:300px;
@@ -149,7 +146,6 @@ export default {
   border:1px solid #444;
   background-color:#fff;
   overflow:hidden;
-  /* background:url(https://i.postimg.cc/3NSXt6Bs/iphone.png); */
   background-size:cover;
   background-position:center;
 }

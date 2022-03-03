@@ -4,7 +4,6 @@ import Profile from '@/views/Profile.vue'
 import Login from '@/views/Login.vue'
 import Register from '@/views/Register.vue'
 import Product from '@/views/Product.vue'
-import Create from '@/views/Createaproduct.vue'
 import Cart from '@/views/Cart.vue'
 
 const routes = [
@@ -38,11 +37,6 @@ const routes = [
     name: 'Cart',
     component: Cart
   },
-  {
-    path: '/createaproduct',
-    name: 'Create',
-    component: Create
-  },
 ]
 
 const router = createRouter({
@@ -50,13 +44,13 @@ const router = createRouter({
   routes
 })
 router.beforeEach((to, from, next) => {
-  const publicPages = ['/','/profile', '/login', '/register','/product','/createaproduct','/cart'];
+  const publicPages = ['/login','/register','/',];
   const authRequired = !publicPages.includes(to.path);
   const loggedIn = localStorage.getItem('user');
   // trying to access a restricted page + not logged in
   // redirect to login page
   if (authRequired && !loggedIn) {
-    next('');
+    next('/login');
   } else {
     next();
   }
